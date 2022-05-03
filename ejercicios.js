@@ -178,20 +178,27 @@ const foodList2 = [
 //   return newarray;
 // }
 
-
 var vegandishes3 = foodList2.filter(function (meal) {
   return meal.isVeggie === true;
 });
 
-let result = vegandishes3.reduce(function(previousValue, secondValue){ return "Que rico " + previousValue.name + "me voy a comer! " + "Que rica " + secondValue.name + " me voy a comer!"});
+let result = vegandishes3.reduce(function (previousValue, secondValue) {
+  return (
+    "Que rico " +
+    previousValue.name +
+    "me voy a comer! " +
+    "Que rica " +
+    secondValue.name +
+    " me voy a comer!"
+  );
+});
 console.log(result);
-// const veggieExercise = foodList2.filter((vegan) => vegan.isVeggie === true);
+
 
 // console.log(veggieExercise);
-//const vegano = foodList
-//  .filter((vegan) => vegan.isVeggie === true)
-//  .map((vegan) => `Que rico ${vegan.name} me voy a comer!`);
-// console.log(vegano);
+const vegano = foodList2.filter((vegan) => vegan.isVeggie === true)
+ const tt = vegano.map((vegan) => `Que rico ${vegan.name} me voy a comer!`);
+console.log(tt);
 
 //
 
@@ -202,3 +209,78 @@ const numeros = [39, 2, 4, 25, 62];
 const sum2 = numeros.reduce((a, b) => a * b);
 
 console.log(sum2);
+// Dado el siguiente array, crear un segundo array que forme frases como en el ejemplo 
+//accediendo a las propiedades del objeto proporcionado:
+
+const staff = [
+  {
+    name: "Pepe",
+    role: "The Boss",
+    hobbies: ["leer", "ver pelis"],
+  },
+  {
+    name: "Ana",
+    role: "becaria",
+    hobbies: ["nadar", "bailar"],
+  },
+  {
+    name: "Luis",
+    role: "programador",
+    hobbies: ["dormir", "comprar"],
+  },
+  {
+    name: "Carlos",
+    role: "secretario",
+    hobbies: ["futbol", "queso"],
+  },
+];
+
+  let sentences = staff.map(persona => `${persona.name} es ${persona.role} y le gusta ${persona.hobbies[1]}`)
+console.log(sentences);
+  //Dado el siguiente array, devolver un array con los nombres de los elementos que 
+  //valgan más de 300 euros
+  const inventory = [
+    {
+      name: 'Mobile phone',
+      price: 199
+    },
+    {
+      name: 'TV Samsung',
+      price: 459
+    },
+  {
+    name: 'Viaje a cancún',
+    price: 600
+  },
+  {
+    name: 'Mascarilla',
+    price: 1
+  }
+];
+/*
+  [
+    'TV Samsung,',
+    'Viaje a Cancún'
+  ]
+*/
+let pricesObove = inventory.filter(prices => prices.price > 300)
+console.log(pricesObove);
+
+// Concatena todos los elementos del array con reduce para que devuelva una sola frase
+const sentenceElements = [
+  'Me',
+  'llamo',
+  "Alex",
+  'y',
+  'quiero',
+  'sentir',
+  'la',
+  'fuerza',
+  'con',
+  'javascript'
+  ];
+ 
+// Resultado--> 'Me llamo XX y quiero sentir la fuerza con javascript'
+const lastExercise = sentenceElements.reduce((a, b) => a + " " + b);
+
+console.log(lastExercise);
